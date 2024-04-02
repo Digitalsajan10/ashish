@@ -712,6 +712,10 @@ img {
 
 .ebook-image img {
   width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -768,6 +772,44 @@ img {
 
   .ebook-image {
     max-width: 100%;
+  }
+}
+
+/*==================== MEDIA QUERIES ====================*/
+/* For small devices */
+@media screen and (max-width: 767px) {
+  .ebooks-container {
+    padding: 0 0.5rem;
+  }
+
+  .ebook {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .ebook-image img {
+    border-radius: 0.3rem; /* Reduce border radius for smaller screens */
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem; /* Reduce size of navigation buttons */
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .ebooks-container {
+    gap: 2rem; /* Increase gap between ebooks for larger screens */
+  }
+
+  .ebook {
+    max-width: calc(50% - 1rem); /* Display two ebooks per row */
+  }
+
+  .ebook-image img {
+    border-radius: 0.5rem; /* Restore border radius for larger screens */
   }
 }
 
