@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Example rule to rewrite index.html to /home
+RewriteRule ^index\.html$ /home [L]
+
+# Rewrite rules for other specific paths if needed
+RewriteRule ^home$ /home [L]
+RewriteRule ^about$ /about [L]
+RewriteRule ^portfolio$ /portfolio [L]
+RewriteRule ^skills$ /skills [L]
+RewriteRule ^contact$ /contact [L]
+RewriteRule ^blog$ /blog [L]
