@@ -208,23 +208,22 @@ img {
 .nav__toggle {
   font-size: 1.1rem;
   cursor: pointer;
-
 }
 
 .nav__toggle:hover {
   color: var(--first-color);
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
     bottom: -100%;
     width: 100%;
     background-color: var(--body-color);
     padding: 2rem 1.5rem 4rem;
-    box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
-    transition: .3s;
+    transition: 0.3s;
   }
 }
 
@@ -253,7 +252,7 @@ img {
 .nav__close {
   position: absolute;
   right: 1.3rem;
-  bottom: .5rem;
+  bottom: 0.5rem;
   font-size: 1.5rem;
   cursor: pointer;
   color: var(--first-color);
@@ -275,9 +274,66 @@ img {
 
 /* Change background header */
 .scroll-header {
-  box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 
+/* Portal Button Styles */
+.portal-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.portal-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
+  border-radius: 50%;
+  z-index: 0;
+  transform: translate(-50%, -50%);
+}
+
+.portal-button:hover::before {
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+}
+
+.portal-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keyframes for button animation */
+@keyframes portalButtonAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Adding animation to the button */
+.portal-button {
+  animation: portalButtonAnim 2s infinite;
+}
 /*==================== HOME ====================*/
 .home__container {
   gap: 1rem;
@@ -1365,61 +1421,4 @@ footer .footer__social a:hover {
 .skills__logo:hover{
   transform: translateY(-.25rem);
   transition: 1s;
-}
-/* Portal Button Styles */
-.portal-button {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 50px;
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.3s;
-}
-
-.portal-button::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 300%;
-  height: 300%;
-  background: rgba(255, 255, 255, 0.5);
-  transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
-  border-radius: 50%;
-  z-index: 0;
-  transform: translate(-50%, -50%);
-}
-
-.portal-button:hover::before {
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 50%;
-}
-
-.portal-button span {
-  position: relative;
-  z-index: 1;
-}
-
-/* Keyframes for button animation */
-@keyframes portalButtonAnim {
-  0% {
-      transform: scale(1);
-  }
-  50% {
-      transform: scale(1.1);
-  }
-  100% {
-      transform: scale(1);
-  }
-}
-
-/* Adding animation to the button */
-.portal-button {
-  animation: portalButtonAnim 2s infinite;
 }
